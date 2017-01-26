@@ -12,36 +12,38 @@ Welcome to my ruby implementation of tic tac toe that you can play from the comm
 
 * ```$ ruby play.rb``` and you will start a two player game
 
-* Make a move by entering a position in the form ```x y``` where x and y are numbers between 0 and 2 inclusive
+* Make a move by entering a position in the form ```B2``` where B and 2 would refer to the middle cell, and ```A1``` the bottom right
+
+* Enter ```q``` when prompted for a move to exit the game at any time
 
 ### Example game ####
 
 ```
 Welcome to TicTacToe
+ 3 |   |   |  
+---------------
  2 |   |   |  
 ---------------
  1 |   |   |  
 ---------------
- 0 |   |   |  
----------------
-   | 0 | 1 | 2
+   | A | B | C
 Player 1 to start
 ```
 ```
 Player 1, enter your move: 1 1
-2 |   |   |  
+3 |   |   |  
 ---------------
-1 |   | o |  
+2 |   | o |  
 ---------------
-0 |   |   |  
+1 |   |   |  
 ---------------
-  | 0 | 1 | 2
+  | A | B | C
 ```
 
 ### Future ###
 
 * Have a guard clause in the controller against repeat moves
 
-* Replace the x-coords with letters and remove the zero indexing y-coords
+* ~~Replace the x-coords with letters and remove the zero indexing y-coords~~
 
 * Build a tic tac toe AI

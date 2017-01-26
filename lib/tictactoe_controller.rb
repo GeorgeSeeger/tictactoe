@@ -7,6 +7,7 @@ class TicTacToeController
     @tictactoe = tictactoe_Klass.new
     @viewer = tictactoe_viewer_Klass
     @players = ["Player 1", "Player 2"]
+    @x_coords = ['a','b','c']
     @is_player1_move = true
   end
 
@@ -19,6 +20,7 @@ class TicTacToeController
   end
 
   private
+
   def welcome
     puts "Welcome to TicTacToe"
     print_board
@@ -52,20 +54,22 @@ class TicTacToeController
 
   def parse_player_move
     begin
-      args = gets.chomp.split
+      args = gets.chomp.split('')
       exit if args.include? 'q'
+      args = [@x_coords.index(args[0].downcase), args[1].to_i - 1]
       print "That is an invalid move, please try again: " unless valid_args args
     end while !valid_args(args)
-    return args.map(&:to_i)
+    return args
   end
 
   def valid_args args
     return false if args.length != 2
-    args.map(&:to_i).each do |e|
+    args.each do |e|
       return false if e < 0 || e > 2
     end
     true
   end
+
   def get_player_name
     return @players[0] if @is_player1_move
     @players[1]
