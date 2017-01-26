@@ -40,6 +40,8 @@ Player 1, enter your move: 1 1
 
 ### Future ###
 
-* Build a tic tac toe AI
+* Have a guard clause in the controller against repeat moves
 
 * Replace the x-coords with letters and remove the zero indexing y-coords
+
+* Build a tic tac toe AI
