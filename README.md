@@ -28,7 +28,7 @@ Welcome to TicTacToe
 Player 1 to start
 ```
 ```
-Player 1, enter your move: 0 0
+Player 1, enter your move: 1 1
 2 |   |   |  
 ---------------
 1 |   | o |  
