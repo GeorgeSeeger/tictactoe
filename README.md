@@ -42,7 +42,7 @@ Player 1, enter your move: 1 1
 
 ### Future ###
 
-* Have a guard clause in the controller against repeat moves
+* ~~Have a guard clause in the controller against repeat moves~~
 
 * ~~Replace the x-coords with letters and remove the zero indexing y-coords~~
 

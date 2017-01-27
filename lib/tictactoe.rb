@@ -18,6 +18,9 @@ class TicTacToe
     check_win
   end
 
+  def check_empty args
+    !!@board[args[1]][args[0]]
+  end
 
   def check_win
     return true if check_rows

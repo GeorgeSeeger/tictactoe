@@ -41,7 +41,6 @@ class TicTacToeController
   end
 
   def make_move args
-    next_turn if check_empty args
     @tictactoe.o_move(args[0],args[1]) if @is_player1_move
     @tictactoe.x_move(args[0],args[1]) unless @is_player1_move
   end
@@ -61,14 +60,13 @@ class TicTacToeController
   end
 
   def check_empty args
-    return !!@tictactoe.board[args[1]][args[0]]
+    @tictactoe.check_empty args
   end
 
   def valid_args args
     return false if args.length != 2
-    args.each do |e|
-      return false if e < 0 || e > 2
-    end
+    return false if check_empty args
+    args.each{|e| return false if e < 0 || e > 2}
     true
   end
 
