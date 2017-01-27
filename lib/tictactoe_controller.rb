@@ -41,11 +41,9 @@ class TicTacToeController
   end
 
   def make_move args
-    if @is_player1_move
-      @tictactoe.o_move(args[0],args[1])
-    else
-      @tictactoe.x_move(args[0],args[1])
-    end
+    next_turn if check_empty args
+    @tictactoe.o_move(args[0],args[1]) if @is_player1_move
+    @tictactoe.x_move(args[0],args[1]) unless @is_player1_move
   end
 
   def print_board
@@ -60,6 +58,10 @@ class TicTacToeController
       print "That is an invalid move, please try again: " unless valid_args args
     end while !valid_args(args)
     return args
+  end
+
+  def check_empty args
+    return !!@tictactoe.board[args[1]][args[0]]
   end
 
   def valid_args args

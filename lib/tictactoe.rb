@@ -14,7 +14,12 @@ class TicTacToe
   end
 
   def check_complete
-    return true if check_draw
+    return true if check_full
+    check_win
+  end
+
+
+  def check_win
     return true if check_rows
     return true if check_columns
     return true if check_diagonals
@@ -22,12 +27,14 @@ class TicTacToe
   end
 
   def check_draw
+    check_full && !check_win
+  end
+  private
+
+  def check_full
     return false if @board.flatten.include? nil
     true
   end
-
-  private
-  
   def check_rows(array=@board)
     array.each do |row|
       return true if row[1] && row[0] == row[1] && row[1] == row[2]
